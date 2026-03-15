@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weather Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sky canvas for animated background -->
+<canvas id="sky-canvas"></canvas>
+
+<!-- Weather particles -->
+<div class="rain-layer" id="rain-layer"></div>
+<div class="snow-layer" id="snow-layer"></div>
+<div class="fog-layer" id="fog-layer"></div>
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+  <div class="theme-icon-sun">☀️</div>
+  <div class="theme-icon-moon">🌙</div>
+</button>
+
+<!-- Transition Overlay -->
+<div id="theme-transition-overlay"></div>
+
+<div id="app">
+  <div id="loading">
+    <div class="spinner"></div>
+    <span>Detecting your location…</span>
+  </div>
+  <div id="error-msg">Unable to get weather. Please allow location access and refresh.</div>
+
+  <!-- Header -->
+  <div class="header" id="header">
+    <div class="location-line" id="region-line">Your location</div>
+    <div class="city-name" id="city-name">—</div>
+    <div class="date-line" id="date-line">—</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero" id="hero">
+    <div class="weather-icon-wrap" id="main-icon"></div>
+    <div class="temp-huge" id="temp-display">—</div>
+    
+    <!-- Repositioned Unit Toggle -->
+    <div class="unit-toggle" id="unit-toggle">
+      <button class="unit-btn active" id="btn-c" onclick="setUnit('C')">°C</button>
+      <button class="unit-btn" id="btn-f" onclick="setUnit('F')">°F</button>
+    </div>
+
+    <div class="condition-label" id="condition-label">—</div>
+  </div>
+
+  <!-- Metrics -->
+  <div class="cards-row" id="cards-row">
+    <div class="metric-card">
+      <div class="metric-label">Feels Like</div>
+      <div class="metric-value" id="feels-like">—</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Humidity</div>
+      <div class="metric-value" id="humidity">—<span class="metric-unit">%</span></div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Wind Speed</div>
+      <div class="metric-value" id="wind-speed">—<span class="metric-unit">km/h</span></div>
+    </div>
+  </div>
+
+  <!-- Forecast -->
+  <div class="forecast-card" id="forecast-card">
+    <div class="forecast-title">7-Day Forecast</div>
+    <div class="forecast-grid" id="forecast-grid"></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer" id="footer">
+    Powered by Open-Meteo · Updated <span id="update-time">—</span>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
