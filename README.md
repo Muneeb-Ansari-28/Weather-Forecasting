@@ -2,6 +2,12 @@
 
 A premium, highly interactive weather application that provides real-time weather data and 7-day forecasts with stunning visual effects and a dynamic theme system.
 
+## Preview
+<img width="1920" height="1390" alt="Image" src="https://github.com/user-attachments/assets/56966bc2-884e-45d0-ba94-d75f7fc30de9" />
+
+## Video
+https://github.com/user-attachments/assets/faefe935-05fb-42e2-af4e-e90f62a95a47
+
 ## ✨ Features
 
 - **📍 Auto-Location Detection**: Automatically detects your city to provide local weather updates instantly.
